@@ -26,6 +26,7 @@
   width: 100%;
   gap: 100px;
   margin-top: 80px;
+  padding-bottom: 48px;
 }
 @media screen and (max-width: 600px) {
   .schedule {
@@ -61,9 +62,6 @@
   border: 2px solid #673AB7;
   border-radius: 16px;
   cursor: pointer;
-}
-.ringItem:last-of-type {
-  padding-bottom: 48px;
 }
 
 /*# sourceMappingURL=rings.css.map */

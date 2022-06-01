@@ -18,6 +18,7 @@
     width: 100%;
     gap: 100px;
     margin-top: 80px;
+    padding-bottom: 48px;
 
     @media screen and (max-width: global.$screen-mobile-w) {
         gap: 80px;
@@ -54,9 +55,5 @@
         border: 2px solid global.$primary-color;
         border-radius: 16px;
         cursor: pointer;
-    }
-
-    &:last-of-type {
-        padding-bottom: 48px;
     }
 }
