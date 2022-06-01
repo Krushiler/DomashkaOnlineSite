@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="shortcut icon" href="Images/coffee.png" />
+    <script src="JavaScript/jquery.js"></script>
+</head>
+<body>
+    <div class="login-table">
+        <span>Код класса</span>
+        <input type="text" class="login-input" id="login-input">
+        <span id="loginError" style="color:red; font-size: 15px; display: none;">Error</span>
+        <br>
+        <span>Код модератора</span> 
+        <input type="password" class="login-input" id="password-input"><img src="Images/eye_slashed.png" toggle="#password-input" class="fa-eye field-icon toggle-password">
+        <div class="buttonsdiv">
+            <form><button type="button" id="signinbtn">Войти</button></form>
+            <form><button type="button" id="signupbtn">Регистрация</button></form>
+        </div>
+    </div>
+    <script>
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+            $(this).attr("src", "Images/eye.png");
+        } else {
+            input.attr("type", "password");
+            $(this).attr("src", "Images/eye_slashed.png");
+        }
+    });
+    </script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+    <script defer src="JavaScript/firebase-init.js"></script>
+    <script defer src="JavaScript/login.js"></script>
+</body>

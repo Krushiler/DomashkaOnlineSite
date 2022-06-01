@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Домашка</title>
+    <link rel="shortcut icon" href="Images/coffee.png">
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/homework.css">
+    <script src="JavaScript/jquery.js"></script>
+</head>
+<body>
+    <div class="topnav">
+        <img id="burger-open" src="Images/burger_open.png"/>
+        <span>Домашнее задание</span>
+        <div id="saveSpan" class="button">Сохранить</div>
+    </div>
+
+    <div class="days under-topnav-menu">
+            <div id="btnd1" class="buttonDays active">ПН</div>
+            <div id="btnd2" class="buttonDays">ВТ</div>
+            <div id="btnd3" class="buttonDays">СР</div>
+            <div id="btnd4" class="buttonDays">ЧТ</div>
+            <div id="btnd5" class="buttonDays">ПТ</div>
+            <div id="btnd6" class="buttonDays">СБ</div>
+    </div>
+    <div class="homework loading" id="homework">
+        <div class="schedule loadable"></div>
+        <div class="spinner"></div>
+    </div>
+    
+    <div class="messageArea" id="messageArea">
+        <div class="messageBox">
+            <span id="message">Сохранить изменения?</span>
+            <div class="button" id="saveBtn">Сохранить</div>
+            <img id="closeBtn" src="Images/cancel.png"/>
+        </div>
+    </div>
+
+    <div class="burger-menu">
+        <div class="burger-header">
+            <img class="logo" src="Images/logo_circle.png">
+            <img id="burger-close" src="Images/burger_close.png">
+        </div>
+        <div class="burger-body">
+            <a href="homework.html" id="homework_link" class="active">Домашнее задание</a>
+            <a href="subjects.html" style="display: none" id="subjects_link">Предметы</a>
+            <a href="rings.html" id="rings_link">Звонки</a>
+            <a id="exit_link">Выход</a>
+        </div>
+    </div>
+
+    <!-- UTIL -->
+    <script defer src="JavaScript/util/loadingUtil.js"></script>
+    <script defer src="JavaScript/textarea-resize.js"></script>
+    <script defer src="JavaScript/burger-menu.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+    <script defer src="JavaScript/firebase-init.js"></script>
+
+    <!-- DOMAIN -->
+    <script defer src="JavaScript/homework.js"></script>
+</body>

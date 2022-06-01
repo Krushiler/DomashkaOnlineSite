@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Домашка</title>
+    <link rel="shortcut icon" href="Images/coffee.png">
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/subjects.css">
+    <script src="JavaScript/jquery.js"></script>
+</head>
+<body>
+    <div class="under-topnav-menu">
+        <div id="addsub" class="button" onclick="addSub()">Добавить</div>
+        <div type="button" id="savesubs" class="button" onclick="clickSave()">Сохранить</div>
+    </div>
+    <div class="topnav">
+        <img id="burger-open" src="Images/burger_open.png">
+        <span>Предметы</span>
+    </div>
+    <div class="subs" id="subs">
+        <ul class="sublist loadable" id="sublist"></ul>
+        <div class="spinner"></div>
+    </div>
+    <div class="messageArea" id="messageArea">
+        <div class="messageBox">
+            <span id="message">Сохранить изменения?</span>
+            <div class="button" id="saveBtn">Сохранить</div>
+            <img onclick="hideMessage()" id="closeBtn" src="Images/cancel.png"/>
+        </div>
+    </div>
+
+    <div class="burger-menu">
+        <div class="burger-header">
+            <img class="logo" src="Images/logo_circle.png">
+            <img id="burger-close" src="Images/burger_close.png">
+        </div>
+        <div class="burger-body">
+            <a href="homework.html" id="homework_link">Домашнее задание</a>
+            <a href="subjects.html" id="subjects_link" class="active">Предметы</a>
+            <a href="rings.html" id="rings_link">Звонки</a>
+            <a id="exit_link">Выход</a>
+        </div>
+    </div>
+
+<script defer src="JavaScript/textarea-resize.js"></script>
+
+<!-- UTIL -->
+<script defer src="JavaScript/util/loadingUtil.js"></script>
+<script defer src="JavaScript/burger-menu.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+<script defer src="JavaScript/firebase-init.js"></script>
+
+<!-- DOMAIN -->
+<script defer src="JavaScript/subjects.js"></script>
+</body>

@@ -1,0 +1,76 @@
+@use "base/global.scss" as global;
+
+$subinp_width: 240px;
+$delete_width: 120px;
+
+$subinp_height_m: 64px;
+
+.under-topnav-menu {
+    gap: calc(15%);
+}
+
+.under-topnav-menu .button {
+    width: $subinp_width;
+    height: global.$under-topnav-button-height;
+}
+
+.subs {
+    width: 100%;
+    overflow: auto;
+    margin-top: global.$topnav-height + global.$under-topnav-menu-height;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.sublist {
+	list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @media screen and (max-width: global.$screen-mobile-w) {
+        gap:40px;
+    }
+}
+
+.sublist li {
+    width: 100%;
+	padding: 24px;
+    display: flex;
+    gap: calc(15% + $delete_width);
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: global.$screen-mobile-w) {
+        gap: 5%;
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: space-between;
+    }
+}
+
+.subinp {
+    width: $subinp_width;
+    outline: none;
+    border: 2px solid global.$primary-color;
+    border-radius: 16px;
+    font-size: 1.1em;
+    transition: global.$default-transition-time border-color;
+    transition: global.$default-transition-time background-color;
+    text-align: center;
+    padding: 8px;
+    @media screen and (max-width: global.$screen-mobile-w) {
+        height: $subinp_height_m;
+    }
+}
+
+.subdel {
+    @include global.button;
+    padding: 8px 16px;
+    width: 120px;
+    @media screen and (max-width: global.$screen-mobile-w) {
+        height: $subinp_height_m;
+    }
+}

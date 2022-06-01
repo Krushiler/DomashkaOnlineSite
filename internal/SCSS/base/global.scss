@@ -1,0 +1,89 @@
+// UTIL
+$screen-mobile-w: 600px;
+
+
+// Styling
+$primary-color:#673AB7;
+$primary-30-color: rgba(103, 58, 183, 0.3);
+$primary-dark-color:#512DA8;
+$primary-light-color:#D1C4E9;
+$text-icons-color:#FFFFFF;
+$accent-color:#4CAF50;
+$accent-40-color: rgba(76, 175, 80, 0.4);
+$text-primary-color:#212121;
+$text-secondary-color:#757575;
+$divider-color:#BDBDBD;
+$background-color:#F9F9FB;
+$default-transition-time: 0.3s;
+$topnav-height: 120px;
+$under-topnav-menu-height: 80px;
+$under-topnav-button-height: 40px;
+$burger-menu-width: 300px;
+
+@mixin button {
+    font-size: 0.8em;
+    border: 2px solid $primary-color;
+    border-radius: 16px;
+    outline: none;
+    font-weight: bold;
+    background-color: $primary-light-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    line-height: 100%;
+    transition: $default-transition-time background-color;
+
+    &:hover {
+        background-color: $primary-30-color;
+    }
+
+    &:active {
+        background-color: $accent-40-color;
+    }
+
+}
+
+@mixin message-screen-area {
+    background-color: rgba(218, 218, 218, 0.6);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+@mixin message-box {
+    padding: 50px;
+    padding-bottom: 70px;
+    background-color: $primary-light-color;
+    border: 4px solid $primary-color;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@keyframes loading-spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+}
+
+@mixin loading-animation {
+    animation-name: loading-spinner;
+    animation-duration: 600ms;
+    animation-timing-function:cubic-bezier(.71,.26,.28,.89);
+    animation-iteration-count: infinite;
+}

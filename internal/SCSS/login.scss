@@ -1,0 +1,98 @@
+@use "base/global.scss" as global;
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-table{
+    background-color: global.$primary-light-color;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid global.$primary-color;
+    border-radius: 24px;
+    color: global.$text-primary-color;
+}
+
+.login-table > span{
+    align-self: flex-start;
+    font-size: 1.2em;
+}
+
+.login-table > span:last-of-type{
+    margin-top: 12px;
+}
+
+.login-input{
+    height: 36px;
+    margin-top: 12px;
+    width: 85%;
+    outline: none;
+    padding: 1px 5px 1px 5px;
+    font-size: 1.2em;
+    border: 4px solid global.$primary-color;
+    border-radius: 12px;
+    transition: global.$default-transition-time background-color;
+    position: relative;
+}
+
+.login-input:hover{
+    background-color: #d1d1d1;
+}
+
+.login-input:focus{
+    border-color: global.$accent-color;
+    transition: global.$default-transition-time border-color;
+    transition: global.$default-transition-time background-color;
+}
+
+.buttonsdiv{
+    margin-top: 28px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button{
+    padding: 10px;
+    font-size: 1em;
+    border: 4px solid global.$primary-color;
+    border-radius: 10px;
+    outline: none;
+    transition: global.$default-transition-time background-color;
+}
+
+button:hover{
+    background-color: global.$primary-light-color;
+}
+
+button:active{
+    background-color: global.$accent-color;
+    transition: 0s linear;
+}
+
+.field-icon {
+    opacity: 0;
+    float: right;
+    z-index: 2;
+    align-self: flex-end;
+    margin-top: -24px;
+    margin-right: 32px;
+}
+
+.field-icon:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+#password-input:hover ~ .field-icon{
+    opacity: 1;
+}
+
+#password-input:focus ~ .field-icon{
+    opacity: 1;
+}

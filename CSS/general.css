@@ -1,0 +1,368 @@
+@keyframes loading-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #F9F9FB;
+}
+
+/*#region*/
+.burger-menu {
+  transform: translateX(-100%);
+  transition: 0.2s transform ease-in-out;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 300px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #F9F9FB;
+}
+@media screen and (max-width: 600px) {
+  .burger-menu {
+    width: 100%;
+  }
+}
+.burger-menu.active {
+  transform: translateX(0%);
+}
+
+#burger-open {
+  position: absolute;
+  width: 32px;
+  top: 60px;
+  transform: translateY(-50%);
+  left: 32px;
+  cursor: pointer;
+}
+
+#burger-close {
+  position: absolute;
+  width: 32px;
+  top: 60px;
+  transform: translateY(-50%);
+  left: 32px;
+  cursor: pointer;
+}
+
+.burger-menu a {
+  color: #212121;
+  font-size: 1.2em;
+  text-decoration: none;
+  width: 100%;
+  padding: 32px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.burger-menu a.active {
+  pointer-events: none;
+  color: #4CAF50;
+}
+
+.burger-menu a:hover {
+  text-decoration: underline;
+}
+
+.burger-header {
+  width: 100%;
+  height: 300px;
+  background-color: #673AB7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-header .logo {
+  width: 140px;
+}
+
+.burger-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#exit_link {
+  padding: 0;
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  margin: 0;
+}
+
+/*#endregion*/
+/* TOPNAV */
+/*#region*/
+.topnav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 120px;
+  background-color: #673AB7;
+  clear: both;
+}
+
+.topnav span {
+  color: #FFFFFF;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.topnav a.active {
+  pointer-events: none;
+}
+
+.topnav a:hover {
+  text-decoration: underline;
+}
+
+.under-topnav-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 120px;
+  gap: 5%;
+  background-color: #D1C4E9;
+}
+
+.under-topnav-menu .button {
+  height: 80px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.button {
+  font-size: 0.8em;
+  border: 2px solid #673AB7;
+  border-radius: 16px;
+  outline: none;
+  font-weight: bold;
+  background-color: #D1C4E9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  line-height: 100%;
+  transition: 0.3s background-color;
+}
+.button:hover {
+  background-color: rgba(103, 58, 183, 0.3);
+}
+.button:active {
+  background-color: rgba(76, 175, 80, 0.4);
+}
+
+/*#endregion*/
+/*#region*/
+.loadable {
+  transition: 0.3s opacity ease-in-out;
+}
+
+.spinner {
+  transition: 0.3s opacity ease-in-out;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 0;
+  animation-name: loading-spinner;
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.71, 0.26, 0.28, 0.89);
+  animation-iteration-count: infinite;
+  margin-top: -50px;
+  margin-left: -50px;
+  background: url("../Images/inyan_loader.svg");
+  background-size: 100px 100px;
+}
+
+.loading .loadable {
+  opacity: 0;
+}
+.loading .spinner {
+  opacity: 1;
+}
+
+/*#endregion*/
+/* MESSAGE AREA */
+/*#region*/
+.messageArea {
+  background-color: rgba(218, 218, 218, 0.6);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.messageBox {
+  padding: 50px;
+  padding-bottom: 70px;
+  background-color: #D1C4E9;
+  border: 4px solid #673AB7;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#saveBtn {
+  position: absolute;
+  padding: 10px;
+  width: 150px;
+  height: 36px;
+  margin-right: -30px;
+  margin-top: 100px;
+}
+
+#message {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+#closeBtn {
+  position: absolute;
+  display: block;
+  font-weight: 1000;
+  margin-top: -80px;
+  margin-right: -30px;
+  font-size: 25px;
+  cursor: default;
+  color: black;
+  user-select: none;
+  transition: 0.3s background-color;
+}
+
+#closeBtn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#closeBtn:active {
+  opacity: 0.5;
+}
+
+/*#endregion*/
+/* TEXTAREA/SELECT */
+/*#region*/
+textarea {
+  resize: none;
+  font-size: 1em;
+  overflow: hidden;
+  text-align: center;
+}
+
+textarea:disabled {
+  background-color: white;
+  color: black;
+}
+
+.sub_field {
+  pointer-events: none;
+}
+
+textarea {
+  outline: none;
+  border: 2px solid #673AB7;
+  border-radius: 16px;
+  width: 400px;
+  font-size: 1.1em;
+  min-height: 60px;
+  transition: 0.3s border-color;
+  transition: 0.3s background-color;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  font-weight: bold;
+  outline: none;
+  width: 250px;
+  height: 60px;
+  cursor: pointer;
+  text-align: center;
+  text-align-last: center;
+  border: 2px solid #673AB7;
+  border-radius: 16px;
+  transition: 0.3s border-color;
+  transition: 0.3s background-color;
+}
+
+select option {
+  text-align: left;
+}
+
+select:focus, textarea:focus, input:focus {
+  border-color: #4CAF50;
+}
+
+/*#endregion*/
+/* SCROLLBAR */
+/*#region*/
+::-webkit-scrollbar {
+  width: 15px;
+}
+@media screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: #673AB7;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #512DA8;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px 96DB96;
+  border-radius: 100px;
+}
+
+/*#endregion*/
+
+/*# sourceMappingURL=general.css.map */

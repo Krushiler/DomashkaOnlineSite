@@ -1,0 +1,150 @@
+@keyframes loading-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.homework {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: auto;
+  margin-top: 200px;
+}
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 80px;
+  margin-top: 48px;
+}
+@media screen and (max-width: 600px) {
+  .schedule {
+    gap: 60px;
+  }
+}
+.schedule textarea {
+  min-height: 60px;
+  width: 356px;
+}
+.schedule select {
+  min-height: 60px;
+  width: 212px;
+}
+
+.task {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding-left: 17px;
+  gap: 212px;
+}
+@media screen and (max-width: 800px) {
+  .task {
+    justify-content: space-between;
+    gap: 0;
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .task {
+    gap: 5%;
+  }
+}
+
+.task:last-of-type {
+  padding-bottom: 48px;
+}
+
+.days {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 70px;
+}
+@media screen and (max-width: 800px) {
+  .days {
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .days {
+    justify-content: space-between;
+    gap: 2px;
+  }
+}
+
+.buttonDays {
+  padding: 5px;
+  width: 72px;
+  height: 40px;
+  color: #212121;
+  cursor: pointer;
+  background-color: #D1C4E9;
+  border: 2px solid #512DA8;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.8em;
+  line-height: 100%;
+  transition: 0.3s background-color;
+}
+.buttonDays.nextWeek {
+  border-color: #4CAF50;
+}
+
+.buttonDays:hover {
+  background-color: rgba(103, 58, 183, 0.3);
+}
+
+.buttonDays.active {
+  background-color: rgba(76, 175, 80, 0.4);
+}
+
+#saveSpan {
+  display: none;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  height: 32px;
+  top: 44px;
+  right: 2%;
+  justify-content: center;
+  align-items: center;
+  background-color: #D1C4E9;
+  border-color: var(--accent-color);
+  border-width: 2px;
+  padding: 16px 12px;
+  transition: 0.3s opacity;
+}
+@media screen and (max-width: 600px) {
+  #saveSpan {
+    top: 16px;
+  }
+}
+
+#saveSpan:hover {
+  opacity: 0.7;
+}
+
+#saveSpan:active {
+  opacity: 0.4;
+}
+
+/*# sourceMappingURL=homework.css.map */
