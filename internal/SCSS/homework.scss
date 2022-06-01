@@ -17,8 +17,6 @@
     justify-content:flex-start;
     width: 100%;
     gap: 80px;
-    margin-top: 48px;
-    padding-bottom: 48px;
 
     @media screen and (max-width: global.$screen-mobile-w) {
         gap: 60px;
@@ -52,6 +50,14 @@
 
     @media screen and (max-width: global.$screen-mobile-w) {
         gap: 5%;
+    }
+
+    &:first-of-type {
+        margin-top: 48px;
+    }
+
+    &:last-of-type {
+        padding-bottom: 48px;
     }
 }
 
