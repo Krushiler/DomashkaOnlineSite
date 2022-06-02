@@ -32,7 +32,7 @@ body {
 /*#region*/
 .burger-menu {
   transform: translateX(-100%);
-  transition: 0.2s transform ease-in-out;
+  transition: transform 0.2s ease-in-out, width 0.2s ease-in-out;
   position: fixed;
   left: 0;
   top: 0;
